@@ -256,7 +256,7 @@ If the real credentials are different, update this table according to the databa
 
 ## Author
 
-Created by **Cordineanu Andrei**
+Created by **Constantinov Maxim**
 
 Student project for database application development.
 
