@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:id="authRoot"
+           fx:controller="com.clothingstore.clothingstoreapp.RegisterController"
+           styleClass="auth-root">
+
+    <!-- Background Overlay -->
+    <StackPane style="-fx-background-color: rgba(0, 0, 0, 0.25);"/>
+
+    <!-- Main Content -->
+    <VBox alignment="CENTER" spacing="0">
+        <!-- Card Container -->
+        <VBox alignment="CENTER" spacing="20" styleClass="auth-card"
+              style="-fx-min-width: 450; -fx-max-width: 450; -fx-padding: 50;">
+
+            <!-- Header -->
+            <VBox alignment="CENTER" spacing="8">
+                <Label text="📝" style="-fx-font-size: 48px;"/>
+                <Label text="SIGN UP" styleClass="auth-title" style="-fx-font-size: 32px;"/>
+                <Label text="Create your account" styleClass="auth-subtitle"/>
+            </VBox>
+
+            <!-- Form Fields -->
+            <VBox spacing="12" style="-fx-min-width: 350;">
+                <!-- Email -->
+                <VBox spacing="4">
+                    <Label text="Email ID" styleClass="helper-text" style="-fx-padding: 0;"/>
+                    <TextField fx:id="emailField"
+                               promptText="Enter your email"
+                               styleClass="input-field"
+                               style="-fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Username -->
+                <VBox spacing="4">
+                    <Label text="Username" styleClass="helper-text" style="-fx-padding: 0;"/>
+                    <TextField fx:id="usernameField"
+                               promptText="Choose a username"
+                               styleClass="input-field"
+                               style="-fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Password -->
+                <VBox spacing="4">
+                    <Label text="Password" styleClass="helper-text" style="-fx-padding: 0;"/>
+                    <PasswordField fx:id="passwordField"
+                                  promptText="Create a password"
+                                  styleClass="input-field"
+                                  style="-fx-font-size: 13px;"/>
+                </VBox>
+
+                <!-- Agreement Checkbox -->
+                <CheckBox fx:id="agreementCheckBox"
+                         text="I agree to terms and conditions"
+                         wrapText="true"
+                         styleClass="helper-text"
+                         style="-fx-font-size: 12px; -fx-padding: 8 0 0 0;"/>
+            </VBox>
+
+            <!-- Buttons -->
+            <VBox spacing="12" style="-fx-min-width: 350;">
+                <Button text="REGISTER"
+                        onAction="#handleRegister"
+                        prefHeight="45"
+                        styleClass="button-primary"
+                        style="-fx-font-size: 14px; -fx-padding: 0;"/>
+
+                <Button text="Cancel"
+                        onAction="#handleCancel"
+                        prefHeight="40"
+                        styleClass="button-outline"
+                        style="-fx-font-size: 13px; -fx-padding: 0;"/>
+            </VBox>
+
+            <!-- Error Message -->
+            <Label fx:id="messageLabel" styleClass="message-error"/>
+
+        </VBox>
+    </VBox>
+
+</StackPane>
+

@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:id="shopRoot"
+           fx:controller="com.clothingstore.clothingstoreapp.controller.ShopController"
+           styleClass="shop-root">
+
+    <ImageView fx:id="shopBackgroundImage"
+               preserveRatio="false"
+               smooth="true"
+               opacity="1.0"
+               styleClass="shop-background-image">
+        <image>
+            <Image url="@../../../images/Gemini_Generated_Image_lomw4mlomw4mlomw.png"/>
+        </image>
+    </ImageView>
+
+    <BorderPane styleClass="shop-stage">
+
+    <top>
+        <HBox styleClass="shop-header" alignment="CENTER_LEFT" spacing="18">
+            <Label text="CS" styleClass="brand-mark"/>
+            <VBox spacing="1" styleClass="shop-brand-copy">
+                <Label text="CLOTHING STORE" styleClass="label-title"/>
+                <Label text="Премиальный каталог одежды" styleClass="header-subtitle"/>
+            </VBox>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <HBox alignment="CENTER_LEFT" spacing="10" styleClass="shop-search-shell">
+                <Label text="⌕" styleClass="shop-search-icon"/>
+                <TextField fx:id="searchField"
+                           promptText="Поиск товаров..."
+                           styleClass="shop-search-field"
+                           HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <Pane HBox.hgrow="ALWAYS"/>
+
+            <HBox spacing="10" alignment="CENTER_RIGHT" styleClass="cart-header-control">
+                <StackPane>
+                    <Button onAction="#openCart" text="Корзина" styleClass="shop-cart-main-button">
+                        <graphic>
+                            <ImageView fitWidth="20" fitHeight="20" preserveRatio="true" smooth="true">
+                                <image>
+                                    <Image url="@../../../images/cart-icon.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Label fx:id="cartCountLabel" text="0" styleClass="cart-count-badge" StackPane.alignment="TOP_RIGHT"/>
+                </StackPane>
+                <Button text="👤" onAction="#openOrders" styleClass="shop-profile-button"/>
+            </HBox>
+        </HBox>
+    </top>
+
+    <center>
+        <HBox spacing="22" alignment="TOP_LEFT" styleClass="shop-content">
+            <VBox spacing="18"
+                  alignment="TOP_LEFT"
+                  styleClass="filter-card filter-sidebar">
+                <HBox alignment="CENTER_LEFT" spacing="9" styleClass="sidebar-heading">
+                    <Label text="Фильтры" styleClass="filter-sidebar-title"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <StackPane styleClass="filter-title-icon">
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true">
+                            <image>
+                                <Image url="@../../../images/filter-title-icon.png"/>
+                            </image>
+                        </ImageView>
+                    </StackPane>
+                </HBox>
+
+                <VBox spacing="8" styleClass="filter-field">
+                    <Label text="Категория" styleClass="filter-label"/>
+                    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="filter-select-frame">
+                        <ImageView fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="filter-select-icon">
+                            <image>
+                                <Image url="@../../../images/filter-category-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <ComboBox fx:id="categoryCombo" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Все категории"/>
+                                    <String fx:value="Женщины"/>
+                                    <String fx:value="Мужчины"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="8" styleClass="filter-field">
+                    <Label text="Бренд" styleClass="filter-label"/>
+                    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="filter-select-frame">
+                        <ImageView fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="filter-select-icon">
+                            <image>
+                                <Image url="@../../../images/filter-brand-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <ComboBox fx:id="brandCombo" maxWidth="Infinity" promptText="Все бренды" HBox.hgrow="ALWAYS">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Все бренды"/>
+                                    <String fx:value="Nike"/>
+                                    <String fx:value="Adidas"/>
+                                    <String fx:value="Zara"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="10" styleClass="filter-field">
+                    <Label text="Цвет" styleClass="filter-label"/>
+                    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="filter-select-frame">
+                        <ImageView fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="filter-select-icon">
+                            <image>
+                                <Image url="@../../../images/filter-color-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <ComboBox fx:id="colorCombo" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Любой цвет"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </HBox>
+                </VBox>
+
+                <VBox spacing="8" styleClass="filter-field">
+                    <Label text="Размер" styleClass="filter-label"/>
+                    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="filter-select-frame">
+                        <ImageView fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="filter-select-icon">
+                            <image>
+                                <Image url="@../../../images/filter-size-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <ComboBox fx:id="sizeCombo" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                            <items>
+                                <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="Любой размер"/>
+                                    <String fx:value="XS"/>
+                                    <String fx:value="S"/>
+                                    <String fx:value="M"/>
+                                    <String fx:value="L"/>
+                                </FXCollections>
+                            </items>
+                        </ComboBox>
+                    </HBox>
+                </VBox>
+                <VBox spacing="12" alignment="TOP_LEFT" styleClass="filter-field price-filter-field">
+                    <Label text="Цена" styleClass="filter-label"/>
+                    <HBox spacing="16" alignment="CENTER_LEFT">
+                        <VBox spacing="7">
+                            <Label text="От" styleClass="filter-price-caption"/>
+                            <TextField fx:id="minPriceSpinner" editable="false" focusTraversable="false" prefWidth="112"/>
+                        </VBox>
+                        <VBox spacing="7">
+                            <Label text="До" styleClass="filter-price-caption"/>
+                            <TextField fx:id="maxPriceSpinner" editable="false" focusTraversable="false" prefWidth="112"/>
+                        </VBox>
+                    </HBox>
+                    <Pane fx:id="priceRangeSlider"
+                          minWidth="248"
+                          prefWidth="248"
+                          maxWidth="248"
+                          minHeight="26"
+                          prefHeight="26"
+                          styleClass="price-range-control">
+                        <Region fx:id="priceRangeTrack"
+                                layoutX="9"
+                                layoutY="11"
+                                prefWidth="192"
+                                prefHeight="4"
+                                styleClass="price-range-track"/>
+                        <Region fx:id="priceRangeActive"
+                                layoutX="9"
+                                layoutY="11"
+                                prefWidth="192"
+                                prefHeight="4"
+                                styleClass="price-range-active"/>
+                        <StackPane fx:id="minPriceThumb"
+                                   layoutX="0"
+                                   layoutY="3"
+                                   prefWidth="18"
+                                   prefHeight="18"
+                                   styleClass="price-range-thumb"/>
+                        <StackPane fx:id="maxPriceThumb"
+                                   layoutX="192"
+                                   layoutY="3"
+                                   prefWidth="18"
+                                   prefHeight="18"
+                                   styleClass="price-range-thumb"/>
+                    </Pane>
+                </VBox>
+                <Pane VBox.vgrow="ALWAYS"/>
+                <VBox spacing="10" styleClass="filter-actions">
+                    <Button id="applyFilterButton"
+                            text="Применить фильтры"
+                            onAction="#filterByPrice"
+                            maxWidth="Infinity"
+                            graphicTextGap="8"
+                            styleClass="button-primary shop-filter-apply">
+                        <graphic>
+                            <ImageView fitWidth="17" fitHeight="17" preserveRatio="true" smooth="true" styleClass="shop-filter-button-icon">
+                                <image>
+                                    <Image url="@../../../images/filter-apply-icon.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                    <Button id="resetFilterButton"
+                            text="Сбросить фильтры"
+                            onAction="#resetFilter"
+                            maxWidth="Infinity"
+                            graphicTextGap="8"
+                            styleClass="button-outline shop-filter-reset">
+                        <graphic>
+                            <ImageView fitWidth="17" fitHeight="17" preserveRatio="true" smooth="true" styleClass="shop-filter-button-icon">
+                                <image>
+                                    <Image url="@../../../images/filter-reset-icon.png"/>
+                                </image>
+                            </ImageView>
+                        </graphic>
+                    </Button>
+                </VBox>
+            </VBox>
+
+            <VBox spacing="18" styleClass="products-area" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" styleClass="section-heading-row">
+                    <HBox spacing="10" alignment="CENTER_LEFT">
+                        <Label text="Все товары" styleClass="section-title"/>
+                        <Label text="29 товаров" styleClass="section-hint"/>
+                    </HBox>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                </HBox>
+
+                <ScrollPane fx:id="productsScrollPane"
+                            styleClass="shop-viewport"
+                            fitToWidth="true"
+                            hbarPolicy="NEVER"
+                            pannable="true"
+                            VBox.vgrow="ALWAYS">
+                    <TilePane fx:id="productsContainer"
+                              prefColumns="5"
+                              hgap="22"
+                              vgap="24"
+                              prefTileWidth="246"
+                              prefTileHeight="402"
+                              alignment="TOP_CENTER"
+                              tileAlignment="TOP_LEFT"
+                              styleClass="products-grid"/>
+                </ScrollPane>
+
+                <VBox fx:id="emptyState" styleClass="empty-state" spacing="10" visible="false">
+                    <Label text="Товары не найдены" styleClass="detail-subtitle"/>
+                    <Label text="Измените настройки фильтра или поиск" styleClass="muted-text"/>
+                </VBox>
+
+                <HBox spacing="14" alignment="CENTER" styleClass="shop-benefits">
+                    <HBox spacing="12" alignment="CENTER_LEFT" styleClass="shop-benefit" HBox.hgrow="ALWAYS">
+                        <ImageView fitWidth="24" fitHeight="24" preserveRatio="true" smooth="true" styleClass="shop-benefit-icon">
+                            <image>
+                                <Image url="@../../../images/benefit-delivery-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox spacing="4">
+                            <Label text="Бесплатная доставка" styleClass="shop-benefit-title"/>
+                            <Label text="От $100" styleClass="muted-text"/>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="12" alignment="CENTER_LEFT" styleClass="shop-benefit" HBox.hgrow="ALWAYS">
+                        <ImageView fitWidth="24" fitHeight="24" preserveRatio="true" smooth="true" styleClass="shop-benefit-icon">
+                            <image>
+                                <Image url="@../../../images/benefit-return-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox spacing="4">
+                            <Label text="Возврат 14 дней" styleClass="shop-benefit-title"/>
+                            <Label text="Без лишних вопросов" styleClass="muted-text"/>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="12" alignment="CENTER_LEFT" styleClass="shop-benefit" HBox.hgrow="ALWAYS">
+                        <ImageView fitWidth="24" fitHeight="24" preserveRatio="true" smooth="true" styleClass="shop-benefit-icon">
+                            <image>
+                                <Image url="@../../../images/benefit-quality-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox spacing="4">
+                            <Label text="Гарантия качества" styleClass="shop-benefit-title"/>
+                            <Label text="Проверенные бренды" styleClass="muted-text"/>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="12" alignment="CENTER_LEFT" styleClass="shop-benefit" HBox.hgrow="ALWAYS">
+                        <ImageView fitWidth="24" fitHeight="24" preserveRatio="true" smooth="true" styleClass="shop-benefit-icon">
+                            <image>
+                                <Image url="@../../../images/benefit-support-icon.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox spacing="4">
+                            <Label text="Поддержка 24/7" styleClass="shop-benefit-title"/>
+                            <Label text="Всегда на связи" styleClass="muted-text"/>
+                        </VBox>
+                    </HBox>
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+    </BorderPane>
+</StackPane>

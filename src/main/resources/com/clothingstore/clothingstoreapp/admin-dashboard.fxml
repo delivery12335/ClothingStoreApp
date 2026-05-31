@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.SVGPath?>
+
+<StackPane fx:id="adminRoot"
+           xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.clothingstore.clothingstoreapp.controller.AdminController"
+           styleClass="admin-background-root">
+
+    <ImageView fx:id="adminBackground"
+               preserveRatio="false"
+               smooth="true"
+               opacity="1.0">
+        <effect>
+            <GaussianBlur radius="16"/>
+        </effect>
+    </ImageView>
+
+    <VBox styleClass="admin-dashboard-content" VBox.vgrow="ALWAYS">
+        <HBox alignment="CENTER_LEFT" spacing="18" styleClass="admin-dashboard-heading">
+            <StackPane styleClass="admin-dashboard-heading-icon">
+                <SVGPath content="M4 20 H21 M6 16 V12 M11 16 V8 M16 16 V5 M5 13 L11 7 L15 10 L21 4"
+                         styleClass="admin-dashboard-heading-symbol"/>
+            </StackPane>
+            <VBox spacing="6">
+                <Label text="Analytics" styleClass="admin-dashboard-title"/>
+                <Label text="Store performance, order statuses, revenue and brand demand"
+                       styleClass="admin-dashboard-subtitle"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="←" onAction="#closeCurrentWindow" styleClass="admin-dashboard-back-button"/>
+        </HBox>
+
+        <HBox spacing="16" styleClass="admin-stat-row">
+            <HBox spacing="16" fillHeight="false" styleClass="admin-stat-card">
+                <StackPane>
+                    <styleClass>
+                        <String fx:value="admin-stat-icon"/>
+                        <String fx:value="admin-stat-icon-purple"/>
+                    </styleClass>
+                    <ImageView fitWidth="30" fitHeight="30" preserveRatio="true" smooth="true">
+                        <image>
+                            <Image url="@../../../images/dashboard-orders-icon.png"/>
+                        </image>
+                    </ImageView>
+                </StackPane>
+                <VBox spacing="7">
+                    <Label text="Total Orders" styleClass="admin-stat-label"/>
+                    <Label fx:id="totalOrdersLabel" text="0" styleClass="admin-stat-value"/>
+                    <Label text="All customer orders" styleClass="admin-stat-hint"/>
+                    <Label text="+ 12.5%" styleClass="admin-stat-change admin-stat-up"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="16" fillHeight="false" styleClass="admin-stat-card">
+                <StackPane>
+                    <styleClass>
+                        <String fx:value="admin-stat-icon"/>
+                        <String fx:value="admin-stat-icon-blue"/>
+                    </styleClass>
+                    <ImageView fitWidth="31" fitHeight="31" preserveRatio="true" smooth="true">
+                        <image>
+                            <Image url="@../../../images/dashboard-delivered-icon.png"/>
+                        </image>
+                    </ImageView>
+                </StackPane>
+                <VBox spacing="7">
+                    <Label text="Delivered" styleClass="admin-stat-label"/>
+                    <Label fx:id="deliveredOrdersLabel" text="0" styleClass="admin-stat-value admin-stat-blue-value"/>
+                    <Label text="Completed orders" styleClass="admin-stat-hint"/>
+                    <Label text="+ 8.3%" styleClass="admin-stat-change admin-stat-up"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="16" fillHeight="false" styleClass="admin-stat-card">
+                <StackPane>
+                    <styleClass>
+                        <String fx:value="admin-stat-icon"/>
+                        <String fx:value="admin-stat-icon-orange"/>
+                    </styleClass>
+                    <ImageView fitWidth="31" fitHeight="31" preserveRatio="true" smooth="true">
+                        <image>
+                            <Image url="@../../../images/dashboard-processing-icon.png"/>
+                        </image>
+                    </ImageView>
+                </StackPane>
+                <VBox spacing="7">
+                    <Label text="Processing" styleClass="admin-stat-label"/>
+                    <Label fx:id="processingOrdersLabel" text="0" styleClass="admin-stat-value admin-stat-orange-value"/>
+                    <Label text="Waiting to ship" styleClass="admin-stat-hint"/>
+                    <Label text="- 4.1%" styleClass="admin-stat-change admin-stat-down"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="16" fillHeight="false" styleClass="admin-stat-card">
+                <StackPane>
+                    <styleClass>
+                        <String fx:value="admin-stat-icon"/>
+                        <String fx:value="admin-stat-icon-red"/>
+                    </styleClass>
+                    <ImageView fitWidth="31" fitHeight="31" preserveRatio="true" smooth="true">
+                        <image>
+                            <Image url="@../../../images/dashboard-cancelled-icon.png"/>
+                        </image>
+                    </ImageView>
+                </StackPane>
+                <VBox spacing="7">
+                    <Label text="Cancelled" styleClass="admin-stat-label"/>
+                    <Label fx:id="cancelledOrdersLabel" text="0" styleClass="admin-stat-value admin-stat-red-value"/>
+                    <Label text="Stopped orders" styleClass="admin-stat-hint"/>
+                    <Label text="- 0%" styleClass="admin-stat-change admin-stat-neutral"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="16" fillHeight="false" styleClass="admin-revenue-card">
+                <StackPane styleClass="admin-revenue-icon">
+                    <SVGPath content="M12 22 A10 10 0 1 0 12 2 A10 10 0 0 0 12 22 M12 6 V18 M16 8 H10 A2 2 0 0 0 10 12 H14 A2 2 0 0 1 14 16 H8"
+                             styleClass="admin-revenue-symbol"/>
+                </StackPane>
+                <VBox spacing="7">
+                    <Label text="Total Revenue" styleClass="admin-stat-label"/>
+                    <Label fx:id="totalRevenueLabel" text="\$0.00" styleClass="admin-revenue-value"/>
+                    <Label text="Delivered and shipped" styleClass="admin-stat-hint"/>
+                    <Label text="+ 15.7%" styleClass="admin-stat-change admin-stat-up"/>
+                </VBox>
+            </HBox>
+
+            <VBox spacing="10" styleClass="admin-stat-card">
+                <HBox spacing="16" fillHeight="false">
+                    <StackPane>
+                        <styleClass>
+                            <String fx:value="admin-stat-icon"/>
+                            <String fx:value="admin-stat-icon-green"/>
+                        </styleClass>
+                        <ImageView fitWidth="31" fitHeight="31" preserveRatio="true" smooth="true">
+                            <image>
+                                <Image url="@../../../images/dashboard-brand-icon.png"/>
+                            </image>
+                        </ImageView>
+                    </StackPane>
+                    <VBox spacing="7">
+                        <Label text="Popular Brand" styleClass="admin-stat-label"/>
+                        <Label fx:id="popularBrandLabel" text="-" styleClass="admin-stat-value admin-stat-brand admin-stat-green-value"/>
+                        <Label text="Most products" styleClass="admin-stat-hint"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </HBox>
+
+        <HBox spacing="18" VBox.vgrow="ALWAYS" styleClass="admin-chart-row">
+            <VBox spacing="18" styleClass="admin-chart-card" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Order Statuses" styleClass="admin-chart-title"/>
+                </HBox>
+                <HBox spacing="32" alignment="CENTER" fillHeight="false" VBox.vgrow="ALWAYS" styleClass="admin-status-body">
+                    <StackPane styleClass="admin-donut-wrap">
+                        <PieChart fx:id="orderStatusChart"
+                                  labelsVisible="false"
+                                  legendVisible="false"
+                                  animated="false"
+                                  prefWidth="360"
+                                  prefHeight="300"/>
+                        <Circle radius="66" styleClass="admin-donut-hole"/>
+                        <VBox alignment="CENTER" spacing="4">
+                            <Label fx:id="orderStatusCenterLabel" text="0" styleClass="admin-donut-value"/>
+                            <Label text="Total Orders" styleClass="admin-donut-label"/>
+                        </VBox>
+                    </StackPane>
+                    <VBox spacing="19" styleClass="admin-status-legend">
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Label styleClass="admin-legend-dot admin-legend-purple"/>
+                            <Label text="Delivered" styleClass="admin-legend-name"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="deliveredLegendLabel" text="0 (0%)" styleClass="admin-legend-value"/>
+                        </HBox>
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Label styleClass="admin-legend-dot admin-legend-orange"/>
+                            <Label text="Processing" styleClass="admin-legend-name"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="processingLegendLabel" text="0 (0%)" styleClass="admin-legend-value"/>
+                        </HBox>
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Label styleClass="admin-legend-dot admin-legend-blue"/>
+                            <Label text="Shipped" styleClass="admin-legend-name"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="shippedLegendLabel" text="0 (0%)" styleClass="admin-legend-value"/>
+                        </HBox>
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <Label styleClass="admin-legend-dot admin-legend-red"/>
+                            <Label text="Cancelled" styleClass="admin-legend-name"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="cancelledLegendLabel" text="0 (0%)" styleClass="admin-legend-value"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <HBox spacing="12" alignment="CENTER_LEFT" styleClass="admin-dashboard-note">
+                        <Label text="*" styleClass="admin-dashboard-note-icon"/>
+                        <VBox spacing="3">
+                            <Label text="Great job! Your delivery rate is updated from store data." styleClass="admin-dashboard-note-title"/>
+                            <Label text="Keep up the good work and improve your processing time." styleClass="admin-dashboard-note-text"/>
+                        </VBox>
+                    </HBox>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="18" styleClass="admin-chart-card" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT">
+                    <Label text="Brand Popularity" styleClass="admin-chart-title"/>
+                </HBox>
+                <BarChart fx:id="brandPopularityChart"
+                          legendVisible="false"
+                          animated="false"
+                          categoryGap="36"
+                          barGap="4"
+                          VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis label="Brand"/>
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis label="Products"/>
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </HBox>
+    </VBox>
+</StackPane>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.clothingstore.clothingstoreapp.controller.OrdersController"
+            styleClass="orders-root">
+
+    <center>
+        <VBox spacing="26" styleClass="orders-shell" prefWidth="1320" prefHeight="760">
+            <HBox spacing="24" styleClass="orders-topbar">
+                <VBox spacing="8" HBox.hgrow="ALWAYS">
+                    <Label text="Мои заказы" styleClass="orders-page-title"/>
+                    <Label text="Здесь показаны заказы, оформленные в текущем сеансе" styleClass="orders-page-subtitle"/>
+                </VBox>
+            </HBox>
+
+            <ScrollPane fitToWidth="true" styleClass="shop-viewport orders-viewport" VBox.vgrow="ALWAYS">
+                <VBox fx:id="ordersBox" spacing="26" style="-fx-padding: 0 2 4 0;"/>
+            </ScrollPane>
+
+            <VBox fx:id="emptyState" spacing="6" styleClass="orders-empty">
+                <Label text="Заказов пока нет" styleClass="detail-subtitle"/>
+                <Label text="Добавьте товары в корзину и оформите заказ" styleClass="muted-text"/>
+            </VBox>
+
+            <HBox alignment="CENTER_RIGHT">
+                <Button text="×  Закрыть" onAction="#handleClose" styleClass="orders-close-button"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

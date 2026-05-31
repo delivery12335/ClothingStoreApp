@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:id="detailRoot"
+           fx:controller="com.clothingstore.clothingstoreapp.ProductDetailController"
+           styleClass="detail-root">
+
+    <ImageView fx:id="detailBackgroundImage"
+               preserveRatio="false"
+               smooth="true"
+               opacity="1.0"
+               styleClass="shop-background-image">
+        <image>
+            <Image url="@../../../images/Gemini_Generated_Image_lomw4mlomw4mlomw.png"/>
+        </image>
+        <effect>
+            <GaussianBlur radius="2"/>
+        </effect>
+    </ImageView>
+
+<BorderPane styleClass="detail-stage">
+
+    <top>
+        <VBox spacing="10">
+            <HBox styleClass="shop-header" alignment="CENTER_LEFT" spacing="12">
+                <Label text="CS" styleClass="brand-mark"/>
+                <Label text="CLOTHING STORE" styleClass="label-title"/>
+                <Pane HBox.hgrow="ALWAYS" />
+                <HBox spacing="16" alignment="CENTER_RIGHT" styleClass="detail-top-actions">
+                    <Button text="←  Назад" onAction="#handleClose" styleClass="detail-top-back-button"/>
+                    <StackPane>
+                        <Button onAction="#openCart" styleClass="detail-top-cart-button">
+                            <graphic>
+                                <ImageView fitWidth="22" fitHeight="22" preserveRatio="true" smooth="true" styleClass="detail-top-cart-icon">
+                                    <image>
+                                        <Image url="@../../../images/cart-icon.png"/>
+                                    </image>
+                                    <effect>
+                                        <ColorAdjust brightness="-1.0"/>
+                                    </effect>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                        <Label fx:id="cartCountLabel" text="0" styleClass="cart-count-badge" StackPane.alignment="TOP_RIGHT"/>
+                    </StackPane>
+                </HBox>
+            </HBox>
+
+            <HBox spacing="8" styleClass="detail-breadcrumb">
+                <Label text="Главная" styleClass="muted-text"/>
+                <Label text="/" styleClass="muted-text"/>
+                <Label text="Магазин" styleClass="muted-text"/>
+                <Label text="/" styleClass="muted-text"/>
+                <Label fx:id="breadcrumbProductLabel" text="Product" styleClass="muted-text"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="detail-scroll">
+            <VBox spacing="22" styleClass="detail-content">
+                <HBox spacing="28" styleClass="detail-card">
+                    <VBox spacing="14" styleClass="detail-gallery" HBox.hgrow="ALWAYS">
+                        <StackPane styleClass="detail-image-frame">
+                            <ImageView fx:id="mainImageView" fitWidth="520" fitHeight="560" preserveRatio="false" smooth="true" />
+                        </StackPane>
+
+                        <HBox spacing="10" fx:id="thumbnailsBox" alignment="CENTER_LEFT" styleClass="detail-thumbnails" />
+                    </VBox>
+
+                    <VBox spacing="18" styleClass="detail-info-panel" prefWidth="470">
+                        <VBox spacing="8">
+                            <HBox spacing="10" alignment="CENTER_LEFT">
+                                <Label fx:id="brandLabel" styleClass="detail-brand-pill" />
+                                <Label fx:id="stockLabel" styleClass="detail-stock-pill" />
+                            </HBox>
+                            <Label fx:id="titleLabel" styleClass="detail-title" wrapText="true" />
+                            <Label fx:id="metaLabel" styleClass="detail-meta" />
+                        </VBox>
+
+                        <HBox spacing="12" alignment="CENTER_LEFT" styleClass="detail-price-row">
+                            <Label fx:id="priceLabel" styleClass="detail-price" />
+                            <Label text="Премиальное качество" styleClass="detail-meta" />
+                        </HBox>
+
+                        <VBox spacing="10" styleClass="detail-section">
+                            <Label text="Цвет" styleClass="detail-section-title" />
+                            <HBox fx:id="colorBox" spacing="8" />
+                        </VBox>
+
+                        <VBox spacing="10" styleClass="detail-section">
+                            <Label text="Размер" styleClass="detail-section-title" />
+                            <HBox fx:id="sizeBox" spacing="8" />
+                        </VBox>
+
+                        <HBox spacing="42" alignment="BOTTOM_LEFT" styleClass="detail-purchase-row">
+                            <VBox spacing="9" styleClass="detail-quantity-block">
+                                <Label text="Количество" styleClass="detail-quantity-title" />
+                                <HBox alignment="CENTER" styleClass="detail-quantity-stepper">
+                                    <Button fx:id="decreaseQuantityBtn" text="-" onAction="#handleDecreaseQuantity" styleClass="detail-quantity-button" />
+                                    <Label fx:id="quantityValueLabel" text="1" styleClass="detail-quantity-value" />
+                                    <Button fx:id="increaseQuantityBtn" text="+" onAction="#handleIncreaseQuantity" styleClass="detail-quantity-button" />
+                                </HBox>
+                            </VBox>
+
+                            <Button fx:id="addToCartBtn" text="В корзину">
+                                <graphic>
+                                    <ImageView fitWidth="23" fitHeight="23" preserveRatio="true" smooth="true" styleClass="detail-add-icon">
+                                        <image>
+                                            <Image url="@../../../images/cart-icon.png"/>
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                                <styleClass>
+                                    <String fx:value="button-primary"/>
+                                    <String fx:value="detail-add-button"/>
+                                </styleClass>
+                            </Button>
+                        </HBox>
+
+                        <VBox spacing="10" styleClass="detail-description">
+                            <Label text="Описание" styleClass="detail-section-title" />
+                            <TextArea fx:id="descriptionArea" wrapText="true" editable="false" prefRowCount="7" styleClass="detail-description-area" />
+                        </VBox>
+                    </VBox>
+                </HBox>
+
+                <HBox spacing="14" alignment="CENTER" styleClass="detail-benefits">
+                    <HBox spacing="14" alignment="CENTER_LEFT" styleClass="detail-benefit">
+                        <ImageView fitWidth="28" fitHeight="28" preserveRatio="true" smooth="true" styleClass="detail-benefit-icon">
+                            <image>
+                                <Image url="@../../../images/detail-benefit-cart.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox spacing="4">
+                        <Label text="Быстрая выдача" styleClass="detail-benefit-title"/>
+                        <Label text="Готово со склада магазина" styleClass="detail-benefit-text"/>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="14" alignment="CENTER_LEFT" styleClass="detail-benefit">
+                        <ImageView fitWidth="28" fitHeight="28" preserveRatio="true" smooth="true" styleClass="detail-benefit-icon">
+                            <image>
+                                <Image url="@../../../images/detail-benefit-return.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox spacing="4">
+                        <Label text="Лёгкий возврат" styleClass="detail-benefit-title"/>
+                        <Label text="Простой обмен по размеру" styleClass="detail-benefit-text"/>
+                        </VBox>
+                    </HBox>
+                    <HBox spacing="14" alignment="CENTER_LEFT" styleClass="detail-benefit">
+                        <ImageView fitWidth="28" fitHeight="28" preserveRatio="true" smooth="true" styleClass="detail-benefit-icon">
+                            <image>
+                                <Image url="@../../../images/detail-benefit-fast.png"/>
+                            </image>
+                        </ImageView>
+                        <VBox spacing="4">
+                        <Label text="Надёжная корзина" styleClass="detail-benefit-title"/>
+                        <Label text="Товар сохранён до оплаты" styleClass="detail-benefit-text"/>
+                        </VBox>
+                    </HBox>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+</BorderPane>
+</StackPane>

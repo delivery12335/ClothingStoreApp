@@ -1,0 +1,54 @@
+# Maven / Java build output
+target/
+build/
+out/
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven wrapper
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA / JetBrains
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Eclipse
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Local Codex / project indexing artifacts
+.dual-graph/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# SQLite transient files
+*.db-journal
+*.db-shm
+*.db-wal
+identifier.sqlite
+
+# OS metadata
+.DS_Store
+Thumbs.db

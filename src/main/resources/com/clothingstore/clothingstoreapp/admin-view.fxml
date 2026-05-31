@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="adminRoot"
+           xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.clothingstore.clothingstoreapp.controller.AdminController"
+           styleClass="admin-background-root">
+
+    <ImageView fx:id="adminBackground"
+               preserveRatio="false"
+               smooth="true"
+               opacity="1.0">
+        <effect>
+            <GaussianBlur radius="16"/>
+        </effect>
+    </ImageView>
+
+    <VBox spacing="0" styleClass="admin-shell">
+        <HBox styleClass="admin-topbar" alignment="CENTER_LEFT" spacing="16">
+            <VBox spacing="6">
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                    <Label text="CS" styleClass="admin-logo"/>
+                    <Label text="Панель администратора" styleClass="admin-title"/>
+                </HBox>
+                <Label text="Управление каталогом, заказами, отчетами, экспортом и аналитикой"
+                       styleClass="admin-subtitle"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Выйти"
+                    prefWidth="118"
+                    prefHeight="42"
+                    onAction="#logout"
+                    styleClass="admin-btn-logout"/>
+        </HBox>
+
+        <VBox styleClass="admin-content" VBox.vgrow="ALWAYS">
+            <HBox styleClass="admin-hero" alignment="CENTER_LEFT" spacing="18">
+                <VBox spacing="6">
+                    <Label text="Рабочее место магазина одежды" styleClass="admin-hero-title"/>
+                    <Label text="Быстрый доступ к основным инструментам администратора"
+                           styleClass="admin-hero-text"/>
+                </VBox>
+                <Region HBox.hgrow="ALWAYS"/>
+                <VBox styleClass="admin-mini-stat" alignment="CENTER">
+                    <Label text="5" styleClass="admin-mini-stat-value"/>
+                    <Label text="разделов" styleClass="admin-mini-stat-label"/>
+                </VBox>
+            </HBox>
+
+            <GridPane styleClass="admin-grid" hgap="18" vgap="18" VBox.vgrow="ALWAYS">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="33.333" hgrow="ALWAYS"/>
+                    <ColumnConstraints percentWidth="33.333" hgrow="ALWAYS"/>
+                    <ColumnConstraints percentWidth="33.333" hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <VBox styleClass="admin-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="01" styleClass="admin-card-index"/>
+                    <Label text="Управление товарами" styleClass="admin-card-title"/>
+                    <Label text="Добавление, редактирование, удаление и поиск товаров в каталоге"
+                           styleClass="admin-card-text" wrapText="true"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button text="Открыть товары" maxWidth="Infinity" prefHeight="44"
+                            onAction="#openProducts" styleClass="admin-btn-products"/>
+                </VBox>
+
+                <VBox styleClass="admin-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="02" styleClass="admin-card-index"/>
+                    <Label text="Управление заказами" styleClass="admin-card-title"/>
+                    <Label text="Просмотр, изменение статусов, поиск и удаление заказов клиентов"
+                           styleClass="admin-card-text" wrapText="true"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button text="Открыть заказы" maxWidth="Infinity" prefHeight="44"
+                            onAction="#openOrders" styleClass="admin-btn-orders"/>
+                </VBox>
+
+                <VBox styleClass="admin-card" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Label text="03" styleClass="admin-card-index"/>
+                    <Label text="Отчеты и аналитика" styleClass="admin-card-title"/>
+                    <Label text="Сводки по категориям, остаткам, ценам и последним данным продаж"
+                           styleClass="admin-card-text" wrapText="true"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button text="Показать отчеты" maxWidth="Infinity" prefHeight="44"
+                            onAction="#openReports" styleClass="admin-btn-reports"/>
+                </VBox>
+
+                <VBox styleClass="admin-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="04" styleClass="admin-card-index"/>
+                    <Label text="Экспорт данных" styleClass="admin-card-title"/>
+                    <Label text="Сохранение товаров или последнего отчета в CSV и TXT форматах"
+                           styleClass="admin-card-text" wrapText="true"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button text="Экспортировать" maxWidth="Infinity" prefHeight="44"
+                            onAction="#exportData" styleClass="admin-btn-export"/>
+                </VBox>
+
+                <VBox styleClass="admin-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="05" styleClass="admin-card-index"/>
+                    <Label text="Dashboard" styleClass="admin-card-title"/>
+                    <Label text="Отдельный экран со статистикой, выручкой и графиками заказов"
+                           styleClass="admin-card-text" wrapText="true"/>
+                    <Region VBox.vgrow="ALWAYS"/>
+                    <Button text="Открыть Dashboard" maxWidth="Infinity" prefHeight="44"
+                            onAction="#openDashboard" styleClass="admin-btn-dashboard"/>
+                </VBox>
+
+                <padding>
+                    <Insets top="0" right="0" bottom="0" left="0"/>
+                </padding>
+            </GridPane>
+        </VBox>
+    </VBox>
+</StackPane>

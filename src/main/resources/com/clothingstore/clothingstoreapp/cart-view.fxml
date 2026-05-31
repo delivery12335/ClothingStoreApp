@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.clothingstore.clothingstoreapp.controller.CartController"
+            styleClass="cart-root"
+            style="-fx-background-color: #FFFFFF; -fx-background: #FFFFFF;">
+
+    <center>
+        <VBox spacing="18" styleClass="cart-checkout-shell" prefWidth="1320" prefHeight="760">
+            <HBox spacing="38" fillHeight="false" VBox.vgrow="ALWAYS">
+                <VBox spacing="14" HBox.hgrow="ALWAYS" styleClass="cart-list-panel">
+                    <HBox spacing="18" styleClass="cart-header-panel">
+                        <Label text="🛒" styleClass="cart-header-icon"/>
+                        <VBox spacing="6">
+                            <Label text="Корзина" styleClass="detail-title"/>
+                            <Label text="Проверьте товары перед оформлением заказа" styleClass="muted-text"/>
+                        </VBox>
+                    </HBox>
+
+                    <Label fx:id="cartCountLabel" text="Товары в корзине" styleClass="cart-section-title"/>
+
+                    <ScrollPane fitToWidth="true" styleClass="shop-viewport cart-items-viewport" VBox.vgrow="ALWAYS">
+                        <VBox fx:id="itemsBox" spacing="22" style="-fx-padding: 0 0 4 0;"/>
+                    </ScrollPane>
+                </VBox>
+
+                <VBox spacing="14" styleClass="cart-checkout-panel" prefWidth="420" minWidth="420" minHeight="650">
+                    <HBox spacing="12" styleClass="cart-checkout-header">
+                        <StackPane styleClass="cart-form-icon">
+                            <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-form-image-icon">
+                                <image>
+                                    <Image url="@../../../images/checkout-order-icon.png"/>
+                                </image>
+                            </ImageView>
+                        </StackPane>
+                        <VBox spacing="4">
+                            <Label text="Оформление заказа" styleClass="detail-subtitle"/>
+                        </VBox>
+                    </HBox>
+
+                    <VBox spacing="8" styleClass="filter-field">
+                        <Label text="Имя" styleClass="filter-label"/>
+                        <HBox spacing="10" styleClass="cart-input-frame">
+                            <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
+                                <image>
+                                    <Image url="@../../../images/checkout-user-icon.png"/>
+                                </image>
+                            </ImageView>
+                            <TextField fx:id="customerNameField" promptText="Например: Иван"/>
+                        </HBox>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="filter-field">
+                        <Label text="Телефон" styleClass="filter-label"/>
+                        <HBox spacing="10" styleClass="cart-input-frame">
+                            <Label text="⌕" styleClass="cart-input-icon"/>
+                            <TextField fx:id="phoneField" promptText="+373 ..."/>
+                        </HBox>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="filter-field">
+                        <Label text="Улица" styleClass="filter-label"/>
+                        <HBox spacing="10" styleClass="cart-input-frame">
+                            <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
+                                <image>
+                                    <Image url="@../../../images/checkout-location-icon.png"/>
+                                </image>
+                            </ImageView>
+                            <TextField fx:id="streetField" promptText="Улица доставки"/>
+                        </HBox>
+                    </VBox>
+
+                    <HBox spacing="12">
+                        <VBox spacing="8" styleClass="filter-field" HBox.hgrow="ALWAYS">
+                            <Label text="Дом" styleClass="filter-label"/>
+                            <HBox spacing="10" styleClass="cart-input-frame">
+                                <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
+                                    <image>
+                                        <Image url="@../../../images/checkout-home-icon.png"/>
+                                    </image>
+                                </ImageView>
+                                <TextField fx:id="houseField" promptText="12"/>
+                            </HBox>
+                        </VBox>
+                        <VBox spacing="8" styleClass="filter-field" HBox.hgrow="ALWAYS">
+                            <Label text="Квартира" styleClass="filter-label"/>
+                            <HBox spacing="10" styleClass="cart-input-frame">
+                                <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
+                                    <image>
+                                        <Image url="@../../../images/checkout-apartment-icon.png"/>
+                                    </image>
+                                </ImageView>
+                                <TextField fx:id="apartmentField" promptText="34"/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+
+                    <VBox spacing="8" styleClass="filter-field">
+                        <Label text="Оплата" styleClass="filter-label"/>
+                        <HBox spacing="10" styleClass="cart-input-frame">
+                            <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
+                                <image>
+                                    <Image url="@../../../images/checkout-payment-icon.png"/>
+                                </image>
+                            </ImageView>
+                            <ComboBox fx:id="paymentCombo" prefWidth="260" maxWidth="Infinity" HBox.hgrow="ALWAYS">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Наличными при получении"/>
+                                        <String fx:value="Картой курьеру"/>
+                                        <String fx:value="Онлайн картой"/>
+                                    </FXCollections>
+                                </items>
+                            </ComboBox>
+                        </HBox>
+                    </VBox>
+
+                    <VBox spacing="8" styleClass="filter-field">
+                        <Label text="Комментарий к заказу" styleClass="filter-label"/>
+                        <TextArea fx:id="commentArea" promptText="Комментарий к заказу" prefRowCount="5" wrapText="true"/>
+                    </VBox>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="22" styleClass="cart-total-bar">
+                <HBox spacing="16" HBox.hgrow="ALWAYS" styleClass="cart-safe-note">
+                    <Label text="🛡" styleClass="cart-safe-icon"/>
+                    <VBox spacing="6">
+                        <Label text="Безопасная покупка" styleClass="cart-safe-title"/>
+                        <Label text="Ваши данные защищены и не передаются третьим лицам" styleClass="muted-text"/>
+                    </VBox>
+                </HBox>
+                <HBox spacing="10" styleClass="cart-total-group">
+                    <Label text="Итого:" styleClass="filter-label"/>
+                    <Label fx:id="totalLabel" styleClass="cart-total-price"/>
+                </HBox>
+                <Button text="Оформить заказ" fx:id="checkoutBtn" styleClass="cart-order-button">
+                    <graphic>
+                        <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-button-image-icon">
+                            <image>
+                                <Image url="@../../../images/checkout-submit-icon.png"/>
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button text="×  Закрыть" onAction="#handleClose" styleClass="cart-close-button"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
