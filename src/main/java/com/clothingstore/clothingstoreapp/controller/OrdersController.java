@@ -63,7 +63,7 @@ public class OrdersController {
         HBox cardContent = new HBox(22);
         cardContent.setAlignment(Pos.TOP_LEFT);
 
-        ImageView statusImage = new ImageView(loadResourceImage("/images/order-processing-icon.png"));
+        ImageView statusImage = new ImageView(loadResourceImage("/com/clothingstore/clothingstoreapp/images/order-processing-icon.png"));
         statusImage.setFitWidth(24);
         statusImage.setFitHeight(24);
         statusImage.setPreserveRatio(true);
@@ -158,7 +158,7 @@ public class OrdersController {
     private HBox detailLine(String iconFile, String text) {
         HBox line = new HBox(14);
         line.setAlignment(Pos.CENTER_LEFT);
-        ImageView icon = new ImageView(ImageUtil.loadProductImage("images/" + iconFile, DETAIL_ICON_SIZE, DETAIL_ICON_SIZE));
+        ImageView icon = new ImageView(ImageUtil.loadProductImage("com/clothingstore/clothingstoreapp/images/" + iconFile, DETAIL_ICON_SIZE, DETAIL_ICON_SIZE));
         icon.setFitWidth(DETAIL_ICON_SIZE);
         icon.setFitHeight(DETAIL_ICON_SIZE);
         icon.setPreserveRatio(true);

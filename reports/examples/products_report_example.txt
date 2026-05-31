@@ -1,0 +1,8 @@
+Products Report Example
+
+ID | Product Name | Brand | Category | Price | Quantity
+1  | Basic T-Shirt | Nike | T-Shirts | 29.99 | 15
+2  | Sports T-Shirt | Adidas | T-Shirts | 25.99 | 32
+6  | Classic Jeans | Levi's | Jeans | 89.99 | 25
+14 | Evening Dress | Zara | Dresses | 129.99 | 8
+

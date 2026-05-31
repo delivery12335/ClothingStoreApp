@@ -1,5 +1,7 @@
 package com.clothingstore.clothingstoreapp.model;
 
+import com.clothingstore.clothingstoreapp.enums.UserRole;
+
 public class User extends BaseEntity {
     private String email;
     private String username;

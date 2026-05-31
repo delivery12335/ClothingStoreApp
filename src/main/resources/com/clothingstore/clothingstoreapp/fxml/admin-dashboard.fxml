@@ -56,7 +56,7 @@
                     </styleClass>
                     <ImageView fitWidth="30" fitHeight="30" preserveRatio="true" smooth="true">
                         <image>
-                            <Image url="@../../../images/dashboard-orders-icon.png"/>
+                            <Image url="@../images/dashboard-orders-icon.png"/>
                         </image>
                     </ImageView>
                 </StackPane>
@@ -76,7 +76,7 @@
                     </styleClass>
                     <ImageView fitWidth="31" fitHeight="31" preserveRatio="true" smooth="true">
                         <image>
-                            <Image url="@../../../images/dashboard-delivered-icon.png"/>
+                            <Image url="@../images/dashboard-delivered-icon.png"/>
                         </image>
                     </ImageView>
                 </StackPane>
@@ -96,7 +96,7 @@
                     </styleClass>
                     <ImageView fitWidth="31" fitHeight="31" preserveRatio="true" smooth="true">
                         <image>
-                            <Image url="@../../../images/dashboard-processing-icon.png"/>
+                            <Image url="@../images/dashboard-processing-icon.png"/>
                         </image>
                     </ImageView>
                 </StackPane>
@@ -116,7 +116,7 @@
                     </styleClass>
                     <ImageView fitWidth="31" fitHeight="31" preserveRatio="true" smooth="true">
                         <image>
-                            <Image url="@../../../images/dashboard-cancelled-icon.png"/>
+                            <Image url="@../images/dashboard-cancelled-icon.png"/>
                         </image>
                     </ImageView>
                 </StackPane>
@@ -150,7 +150,7 @@
                         </styleClass>
                         <ImageView fitWidth="31" fitHeight="31" preserveRatio="true" smooth="true">
                             <image>
-                                <Image url="@../../../images/dashboard-brand-icon.png"/>
+                                <Image url="@../images/dashboard-brand-icon.png"/>
                             </image>
                         </ImageView>
                     </StackPane>

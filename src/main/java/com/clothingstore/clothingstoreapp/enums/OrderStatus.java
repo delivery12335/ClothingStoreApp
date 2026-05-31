@@ -1,4 +1,4 @@
-package com.clothingstore.clothingstoreapp.model;
+package com.clothingstore.clothingstoreapp.enums;
 
 public enum OrderStatus {
     PROCESSING("Обрабатывается"),

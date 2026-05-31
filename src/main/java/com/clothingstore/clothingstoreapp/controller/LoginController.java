@@ -45,7 +45,7 @@ public class LoginController {
 
     @FXML
     private void initialize() {
-        URL bgUrl = HelloApplication.class.getResource("/images/12.jpg");
+        URL bgUrl = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/images/12.jpg");
         if (authRoot != null && backgroundImageView != null && bgUrl != null) {
             Image backgroundImage = new Image(bgUrl.toExternalForm());
             if (backgroundImage.isError()) {
@@ -95,12 +95,12 @@ public class LoginController {
             String title;
 
             if (user.getRole().equals("ADMIN")) {
-                loader = new FXMLLoader(HelloApplication.class.getResource("admin-view.fxml"));
+                loader = new FXMLLoader(HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/fxml/admin-view.fxml"));
                 title = "Clothing Store - Панель администратора";
                 width = 900;
                 height = 700;
             } else {
-                loader = new FXMLLoader(HelloApplication.class.getResource("shop-view.fxml"));
+                loader = new FXMLLoader(HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/fxml/shop-view.fxml"));
                 title = "Clothing Store - Каталог";
                 width = 1000;
                 height = 700;
@@ -108,7 +108,7 @@ public class LoginController {
 
             Scene scene = new Scene(loader.load(), width, height);
 
-            java.net.URL cssUrl = HelloApplication.class.getResource("styles.css");
+            java.net.URL cssUrl = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css");
             if (cssUrl != null) {
                 scene.getStylesheets().add(cssUrl.toExternalForm());
             }

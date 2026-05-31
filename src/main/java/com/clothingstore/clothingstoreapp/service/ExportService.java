@@ -1,6 +1,6 @@
 package com.clothingstore.clothingstoreapp.service;
 
-import com.clothingstore.clothingstoreapp.model.ExportFormat;
+import com.clothingstore.clothingstoreapp.enums.ExportFormat;
 import com.clothingstore.clothingstoreapp.model.Product;
 import com.clothingstore.clothingstoreapp.model.ProductExportRow;
 import com.clothingstore.clothingstoreapp.model.ReportRow;

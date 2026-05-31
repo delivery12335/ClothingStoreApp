@@ -15,13 +15,13 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(
-                HelloApplication.class.getResource("login-view.fxml")
+                HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/fxml/login-view.fxml")
         );
 
         Scene scene = new Scene(fxmlLoader.load(), 1150, 700);
 
         // Load CSS styles
-        String css = HelloApplication.class.getResource("styles.css").toExternalForm();
+        String css = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css").toExternalForm();
         scene.getStylesheets().add(css);
 
         stage.setTitle("Магазин одежды - Вход");
@@ -37,7 +37,7 @@ public class HelloApplication extends Application {
             return;
         }
 
-        URL iconUrl = HelloApplication.class.getResource("/images/app-icon.png");
+        URL iconUrl = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/images/app-icon.png");
         if (iconUrl != null) {
             stage.getIcons().setAll(new Image(iconUrl.toExternalForm()));
         }

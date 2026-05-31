@@ -12,8 +12,8 @@ out/
 
 # IntelliJ IDEA / JetBrains
 .idea/
-*.iws
 *.iml
+*.iws
 *.ipr
 
 # Eclipse
@@ -38,16 +38,27 @@ out/
 # Local Codex / project indexing artifacts
 .dual-graph/
 
-# Logs and temporary files
+# Logs
 *.log
-*.tmp
-*.temp
+logs/*.log
+!logs/.gitkeep
 
-# SQLite transient files
+# Generated exports
+exports/*.csv
+exports/*.txt
+!exports/.gitkeep
+
+# Database backups and transient SQLite files
+database/backups/*
+!database/backups/.gitkeep
 *.db-journal
 *.db-shm
 *.db-wal
 identifier.sqlite
+
+# Temporary files
+*.tmp
+*.temp
 
 # OS metadata
 .DS_Store

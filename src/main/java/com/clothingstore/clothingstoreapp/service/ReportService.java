@@ -1,6 +1,7 @@
 package com.clothingstore.clothingstoreapp.service;
 
 import com.clothingstore.clothingstoreapp.db.DatabaseConnection;
+import com.clothingstore.clothingstoreapp.enums.ReportType;
 import com.clothingstore.clothingstoreapp.model.*;
 
 import java.sql.Connection;

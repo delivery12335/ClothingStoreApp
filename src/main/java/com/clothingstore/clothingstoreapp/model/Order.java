@@ -1,5 +1,7 @@
 package com.clothingstore.clothingstoreapp.model;
 
+import com.clothingstore.clothingstoreapp.enums.OrderStatus;
+
 public class Order extends BaseEntity {
     private int userId;
     private String orderDate;

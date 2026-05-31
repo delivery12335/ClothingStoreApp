@@ -1,0 +1,8 @@
+Orders Report Example
+
+ID | User ID | Date | Total | Status
+1  | 3 | 2026-04-01 | 149.97 | Delivered
+2  | 4 | 2026-04-05 | 89.99 | Delivered
+7  | 9 | 2026-04-25 | 279.97 | Shipped
+8  | 10 | 2026-05-01 | 309.97 | Shipped
+

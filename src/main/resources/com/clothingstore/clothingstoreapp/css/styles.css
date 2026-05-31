@@ -249,7 +249,7 @@
 
 .shop-root {
     -fx-background-color: #EEF3F7;
-    -fx-background-image: url("../../../images/shop-background.png");
+    -fx-background-image: url("../images/shop-background.png");
     -fx-background-size: cover;
     -fx-background-position: center center;
     -fx-background-repeat: no-repeat;

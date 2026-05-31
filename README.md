@@ -1,58 +1,116 @@
 # ClothingStoreApp
 
-ClothingStoreApp is a desktop clothing store application built with JavaFX, Maven, and SQLite.
+ClothingStoreApp is a JavaFX desktop application for a clothing shop and store management system. It supports customer shopping workflows and an administrator panel for managing products, orders, reporting, and exports.
 
-The application includes a customer-facing shop interface, product details, cart and checkout flow, order history, and an admin area for managing products and orders.
-
-## Features
-
-- User login and registration
-- Product catalog with images
-- Product filtering and search
-- Product detail page
-- Shopping cart with quantity controls
-- Checkout and order creation
-- Order history view
-- Admin dashboard
-- Product CRUD operations
-- Order CRUD operations
-- CSV and TXT export support
-- Local SQLite database storage
-
-## Tech Stack
+## Technologies Used
 
 - Java 17
 - JavaFX 21
 - Maven
 - SQLite
-- FXML and CSS
+- FXML
+- CSS
+- JDBC
+
+## Features
+
+- User login and registration
+- Role-based navigation for administrators and shop users
+- Product catalog with images, brands, sizes, colors, prices, and stock quantities
+- Search and filtering for products
+- Product detail screen with cart actions
+- Shopping cart and checkout workflow
+- Customer order history
+- Admin dashboard with order statistics
+- Product CRUD operations
+- Order CRUD operations
+- Report generation
+- CSV and TXT export support
+- Local SQLite database
+
+## Database
+
+The application uses SQLite through JDBC. The active database file is:
+
+```text
+database/clothing_store.db
+```
+
+The database contains tables for:
+
+- `Users`
+- `Categories`
+- `Products`
+- `Orders`
+- `OrderItems`
+
+Schema and sample seed scripts are available in:
+
+```text
+database/schema.sql
+database/seed.sql
+```
+
+## Default Login Credentials
+
+The following credentials were found in the existing SQLite database:
+
+| Role | Username | Password |
+| --- | --- | --- |
+| Admin | `admin` | `admin123` |
+| Admin | `manager` | `manager123` |
+| User | `ivan_shop` | `pass123` |
 
 ## Project Structure
 
 ```text
 ClothingStoreApp/
-+-- database/
-|   +-- clothing_store.db
-+-- src/
-|   +-- main/
-|       +-- java/
-|       |   +-- com/clothingstore/clothingstoreapp/
-|       +-- resources/
-|           +-- com/clothingstore/clothingstoreapp/
-|           +-- images/
++-- README.md
 +-- pom.xml
-+-- mvnw
-+-- mvnw.cmd
++-- .gitignore
++-- database/
+|   +-- README.md
+|   +-- schema.sql
+|   +-- seed.sql
+|   +-- backups/
++-- docs/
+|   +-- ARCHITECTURE.md
+|   +-- PROJECT_DESCRIPTION.md
+|   +-- USER_GUIDE.md
++-- audit/
+|   +-- AUDIT_REPORT.md
++-- reports/
+|   +-- README.md
+|   +-- examples/
++-- exports/
++-- logs/
++-- src/
+    +-- main/
+    |   +-- java/com/clothingstore/clothingstoreapp/
+    |   |   +-- controller/
+    |   |   +-- dao/
+    |   |   +-- db/
+    |   |   +-- enums/
+    |   |   +-- model/
+    |   |   +-- service/
+    |   |   +-- util/
+    |   +-- resources/com/clothingstore/clothingstoreapp/
+    |       +-- css/
+    |       +-- fxml/
+    |       +-- images/
+    +-- test/java/
 ```
 
-## Requirements
+## Run in IntelliJ IDEA
 
-- JDK 17 or newer
-- `JAVA_HOME` configured to point to your JDK installation
+1. Open IntelliJ IDEA.
+2. Select **Open** and choose the `ClothingStoreApp` folder.
+3. Wait for Maven dependencies to import from `pom.xml`.
+4. Configure a JDK 17 or newer in **File > Project Structure > Project SDK**.
+5. Ensure `JAVA_HOME` points to the same JDK.
+6. Run the Maven goal `javafx:run`, or run `HelloApplication`.
 
-You do not need to install Maven separately because the project includes the Maven wrapper.
-
-## Run the Application
+## Run with Maven
 
 On Windows:
 
@@ -80,20 +138,28 @@ On macOS or Linux:
 ./mvnw clean package
 ```
 
-Build output is generated in the `target/` directory.
+## Reports and Exports
 
-## Database
+Reports can be generated from the admin area and exported as:
 
-The app uses the local SQLite database at:
+- CSV
+- TXT
 
-```text
-database/clothing_store.db
-```
+Generated export files should be saved in the `exports/` folder. Example report files are included in `reports/examples/`.
 
-The database file is included in the repository because the current application connects directly to this file.
+## Screenshots
 
-## Notes
+Add screenshots here before final submission:
 
-- Generated build files are ignored through `.gitignore`.
-- IDE files, local cache files, logs, and SQLite temporary files are not committed.
-- If Maven commands fail with `JAVA_HOME not found`, install/configure a JDK and set the `JAVA_HOME` environment variable.
+- Login screen
+- Shop catalog
+- Product detail screen
+- Cart screen
+- Admin dashboard
+- Product management screen
+- Report/export screen
+
+## Author
+
+Student project: ClothingStoreApp
+

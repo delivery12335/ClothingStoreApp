@@ -11,7 +11,7 @@
 <StackPane xmlns="http://javafx.com/javafx"
            xmlns:fx="http://javafx.com/fxml"
            fx:id="detailRoot"
-           fx:controller="com.clothingstore.clothingstoreapp.ProductDetailController"
+           fx:controller="com.clothingstore.clothingstoreapp.controller.ProductDetailController"
            styleClass="detail-root">
 
     <ImageView fx:id="detailBackgroundImage"
@@ -20,7 +20,7 @@
                opacity="1.0"
                styleClass="shop-background-image">
         <image>
-            <Image url="@../../../images/Gemini_Generated_Image_lomw4mlomw4mlomw.png"/>
+            <Image url="@../images/Gemini_Generated_Image_lomw4mlomw4mlomw.png"/>
         </image>
         <effect>
             <GaussianBlur radius="2"/>
@@ -42,7 +42,7 @@
                             <graphic>
                                 <ImageView fitWidth="22" fitHeight="22" preserveRatio="true" smooth="true" styleClass="detail-top-cart-icon">
                                     <image>
-                                        <Image url="@../../../images/cart-icon.png"/>
+                                        <Image url="@../images/cart-icon.png"/>
                                     </image>
                                     <effect>
                                         <ColorAdjust brightness="-1.0"/>
@@ -116,7 +116,7 @@
                                 <graphic>
                                     <ImageView fitWidth="23" fitHeight="23" preserveRatio="true" smooth="true" styleClass="detail-add-icon">
                                         <image>
-                                            <Image url="@../../../images/cart-icon.png"/>
+                                            <Image url="@../images/cart-icon.png"/>
                                         </image>
                                     </ImageView>
                                 </graphic>
@@ -138,7 +138,7 @@
                     <HBox spacing="14" alignment="CENTER_LEFT" styleClass="detail-benefit">
                         <ImageView fitWidth="28" fitHeight="28" preserveRatio="true" smooth="true" styleClass="detail-benefit-icon">
                             <image>
-                                <Image url="@../../../images/detail-benefit-cart.png"/>
+                                <Image url="@../images/detail-benefit-cart.png"/>
                             </image>
                         </ImageView>
                         <VBox spacing="4">
@@ -149,7 +149,7 @@
                     <HBox spacing="14" alignment="CENTER_LEFT" styleClass="detail-benefit">
                         <ImageView fitWidth="28" fitHeight="28" preserveRatio="true" smooth="true" styleClass="detail-benefit-icon">
                             <image>
-                                <Image url="@../../../images/detail-benefit-return.png"/>
+                                <Image url="@../images/detail-benefit-return.png"/>
                             </image>
                         </ImageView>
                         <VBox spacing="4">
@@ -160,7 +160,7 @@
                     <HBox spacing="14" alignment="CENTER_LEFT" styleClass="detail-benefit">
                         <ImageView fitWidth="28" fitHeight="28" preserveRatio="true" smooth="true" styleClass="detail-benefit-icon">
                             <image>
-                                <Image url="@../../../images/detail-benefit-fast.png"/>
+                                <Image url="@../images/detail-benefit-fast.png"/>
                             </image>
                         </ImageView>
                         <VBox spacing="4">

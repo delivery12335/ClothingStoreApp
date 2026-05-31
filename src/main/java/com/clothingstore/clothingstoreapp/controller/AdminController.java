@@ -3,6 +3,9 @@ package com.clothingstore.clothingstoreapp.controller;
 import com.clothingstore.clothingstoreapp.HelloApplication;
 import com.clothingstore.clothingstoreapp.dao.ProductDAO;
 import com.clothingstore.clothingstoreapp.dao.OrderDAO;
+import com.clothingstore.clothingstoreapp.enums.ExportFormat;
+import com.clothingstore.clothingstoreapp.enums.OrderStatus;
+import com.clothingstore.clothingstoreapp.enums.ReportType;
 import com.clothingstore.clothingstoreapp.model.*;
 import com.clothingstore.clothingstoreapp.service.ExportService;
 import com.clothingstore.clothingstoreapp.service.ReportService;
@@ -153,10 +156,10 @@ public class AdminController {
     @FXML
     private void openDashboard() {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("admin-dashboard.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/fxml/admin-dashboard.fxml"));
             Scene scene = new Scene(loader.load(), 1380, 760);
             scene.setFill(javafx.scene.paint.Color.WHITE);
-            java.net.URL cssUrl = HelloApplication.class.getResource("styles.css");
+            java.net.URL cssUrl = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css");
             if (cssUrl != null) {
                 scene.getStylesheets().add(cssUrl.toExternalForm());
             }
@@ -389,7 +392,7 @@ public class AdminController {
             return;
         }
 
-        String imageUrl = HelloApplication.class.getResource("/images/1.jpg").toExternalForm();
+        String imageUrl = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/images/1.jpg").toExternalForm();
         imageView.setImage(new Image(imageUrl));
         imageView.fitWidthProperty().bind(owner.widthProperty());
         imageView.fitHeightProperty().bind(owner.heightProperty());
@@ -445,7 +448,7 @@ public class AdminController {
         root.getChildren().addAll(background, content);
 
         Scene scene = new Scene(root, 1150, 720);
-        String css = HelloApplication.class.getResource("styles.css").toExternalForm();
+        String css = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css").toExternalForm();
         scene.getStylesheets().add(css);
 
         window.setTitle("Clothing Store - " + title);
@@ -588,9 +591,9 @@ public class AdminController {
             double width = stage.getScene().getWidth();
             double height = stage.getScene().getHeight();
 
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("login-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/fxml/login-view.fxml"));
             Scene scene = new Scene(loader.load(), width, height);
-            String css = HelloApplication.class.getResource("styles.css").toExternalForm();
+            String css = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css").toExternalForm();
             scene.getStylesheets().add(css);
 
             stage.setScene(scene);
@@ -631,7 +634,7 @@ public class AdminController {
     }
 
     private void styleDialog(DialogPane pane) {
-        String css = HelloApplication.class.getResource("styles.css").toExternalForm();
+        String css = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css").toExternalForm();
         if (!pane.getStylesheets().contains(css)) {
             pane.getStylesheets().add(css);
         }
@@ -735,7 +738,7 @@ public class AdminController {
         root.getChildren().addAll(background, shell);
 
         Scene scene = new Scene(root, 1060, 660);
-        String css = HelloApplication.class.getResource("styles.css").toExternalForm();
+        String css = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css").toExternalForm();
         scene.getStylesheets().add(css);
 
         Window owner = activeActionOwner;

@@ -4,7 +4,7 @@ import com.clothingstore.clothingstoreapp.HelloApplication;
 import com.clothingstore.clothingstoreapp.dao.ProductDAO;
 import com.clothingstore.clothingstoreapp.model.Product;
 import com.clothingstore.clothingstoreapp.model.ProductFilter;
-import com.clothingstore.clothingstoreapp.ProductDetailController;
+
 import com.clothingstore.clothingstoreapp.service.CartService;
 import com.clothingstore.clothingstoreapp.util.ImageUtil;
 import com.clothingstore.clothingstoreapp.util.ToastHelper;
@@ -950,12 +950,12 @@ public class ShopController {
 
     private void showProductDetails(Product product) {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("product-detail.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/fxml/product-detail.fxml"));
             Scene scene = new Scene(loader.load());
 
             // apply CSS if available
             try {
-                java.net.URL cssUrl = HelloApplication.class.getResource("styles.css");
+                java.net.URL cssUrl = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css");
                 if (cssUrl != null) scene.getStylesheets().add(cssUrl.toExternalForm());
             } catch (Exception ignored) {}
 
@@ -978,11 +978,11 @@ public class ShopController {
     @FXML
     private void openCart() {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("cart-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/fxml/cart-view.fxml"));
             Scene scene = new Scene(loader.load(), 1400, 820);
             scene.setFill(javafx.scene.paint.Color.WHITE);
             try {
-                java.net.URL cssUrl = HelloApplication.class.getResource("styles.css");
+                java.net.URL cssUrl = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css");
                 if (cssUrl != null) scene.getStylesheets().add(cssUrl.toExternalForm());
             } catch (Exception ignored) {}
 
@@ -1007,11 +1007,11 @@ public class ShopController {
     @FXML
     private void openOrders() {
         try {
-            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("orders-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/fxml/orders-view.fxml"));
             Scene scene = new Scene(loader.load(), 1400, 820);
             scene.setFill(javafx.scene.paint.Color.WHITE);
             try {
-                java.net.URL cssUrl = HelloApplication.class.getResource("styles.css");
+                java.net.URL cssUrl = HelloApplication.class.getResource("/com/clothingstore/clothingstoreapp/css/styles.css");
                 if (cssUrl != null) scene.getStylesheets().add(cssUrl.toExternalForm());
             } catch (Exception ignored) {}
 

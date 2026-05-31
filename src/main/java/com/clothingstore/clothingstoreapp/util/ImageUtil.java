@@ -49,7 +49,7 @@ public final class ImageUtil {
         String normalized = path.trim();
         List<String> candidates = imagePathCandidates(normalized);
 
-        // 1) classpath resources, e.g. /images/nike_black_tshirt.jpg
+        // 1) classpath resources, including legacy DB values like images/nike_black_tshirt.jpg
         for (String candidate : candidates) {
             String resourcePath = candidate.startsWith("/") ? candidate : "/" + candidate;
             java.net.URL resource = ImageUtil.class.getResource(resourcePath);
@@ -84,9 +84,27 @@ public final class ImageUtil {
         String pngPath = pngAlternativePath(path);
         if (pngPath != null) {
             candidates.add(pngPath);
+            candidates.add(toPackagedImagePath(pngPath));
         }
         candidates.add(path);
+        candidates.add(toPackagedImagePath(path));
         return candidates.stream().distinct().toList();
+    }
+
+    private static String toPackagedImagePath(String path) {
+        if (path == null || path.isBlank()) {
+            return path;
+        }
+
+        String normalized = path.replace('\\', '/');
+        String withoutLeadingSlash = normalized.startsWith("/") ? normalized.substring(1) : normalized;
+        if (withoutLeadingSlash.startsWith("com/clothingstore/clothingstoreapp/images/")) {
+            return withoutLeadingSlash;
+        }
+        if (withoutLeadingSlash.startsWith("images/")) {
+            return "com/clothingstore/clothingstoreapp/" + withoutLeadingSlash;
+        }
+        return path;
     }
 
     private static String pngAlternativePath(String path) {

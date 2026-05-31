@@ -11,7 +11,7 @@
            fx:id="authRoot"
            fx:controller="com.clothingstore.clothingstoreapp.controller.LoginController"
            styleClass="auth-root"
-           stylesheets="@styles.css"
+           stylesheets="@../css/styles.css"
            prefWidth="1200"
            prefHeight="750">
 
@@ -21,7 +21,7 @@
                preserveRatio="false"
                smooth="true">
         <image>
-            <Image url="@../../../images/12.jpg"/>
+            <Image url="@../images/12.jpg"/>
         </image>
     </ImageView>
 

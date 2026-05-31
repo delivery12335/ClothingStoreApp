@@ -8,9 +8,11 @@ module com.clothingstore.clothingstoreapp {
     opens com.clothingstore.clothingstoreapp.db to javafx.fxml;
     opens com.clothingstore.clothingstoreapp.model to javafx.base;
     opens com.clothingstore.clothingstoreapp.dao to javafx.fxml;
+    opens com.clothingstore.clothingstoreapp.enums to javafx.base;
 
     exports com.clothingstore.clothingstoreapp;
     exports com.clothingstore.clothingstoreapp.controller;
     exports com.clothingstore.clothingstoreapp.model;
     exports com.clothingstore.clothingstoreapp.dao;
+    exports com.clothingstore.clothingstoreapp.enums;
 }

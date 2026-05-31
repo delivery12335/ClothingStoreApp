@@ -1,4 +1,4 @@
-package com.clothingstore.clothingstoreapp.model;
+package com.clothingstore.clothingstoreapp.enums;
 
 import java.util.List;
 

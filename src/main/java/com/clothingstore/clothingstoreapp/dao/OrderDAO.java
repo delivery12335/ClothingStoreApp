@@ -3,7 +3,7 @@ package com.clothingstore.clothingstoreapp.dao;
 import com.clothingstore.clothingstoreapp.db.DatabaseConnection;
 import com.clothingstore.clothingstoreapp.model.Order;
 import com.clothingstore.clothingstoreapp.model.OrderFilter;
-import com.clothingstore.clothingstoreapp.model.OrderStatus;
+import com.clothingstore.clothingstoreapp.enums.OrderStatus;
 
 import java.sql.*;
 import java.util.ArrayList;

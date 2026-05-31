@@ -1,4 +1,4 @@
-package com.clothingstore.clothingstoreapp;
+package com.clothingstore.clothingstoreapp.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

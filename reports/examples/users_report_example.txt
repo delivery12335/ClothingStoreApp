@@ -1,0 +1,8 @@
+Users Report Example
+
+ID | Username | Email | Role
+1  | admin | admin@mail.com | ADMIN
+2  | manager | manager@mail.com | ADMIN
+3  | ivan_shop | ivan_shop@mail.com | USER
+4  | maria_style | maria_style@mail.com | USER
+

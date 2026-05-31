@@ -37,7 +37,7 @@
                         <StackPane styleClass="cart-form-icon">
                             <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-form-image-icon">
                                 <image>
-                                    <Image url="@../../../images/checkout-order-icon.png"/>
+                                    <Image url="@../images/checkout-order-icon.png"/>
                                 </image>
                             </ImageView>
                         </StackPane>
@@ -51,7 +51,7 @@
                         <HBox spacing="10" styleClass="cart-input-frame">
                             <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
                                 <image>
-                                    <Image url="@../../../images/checkout-user-icon.png"/>
+                                    <Image url="@../images/checkout-user-icon.png"/>
                                 </image>
                             </ImageView>
                             <TextField fx:id="customerNameField" promptText="Например: Иван"/>
@@ -71,7 +71,7 @@
                         <HBox spacing="10" styleClass="cart-input-frame">
                             <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
                                 <image>
-                                    <Image url="@../../../images/checkout-location-icon.png"/>
+                                    <Image url="@../images/checkout-location-icon.png"/>
                                 </image>
                             </ImageView>
                             <TextField fx:id="streetField" promptText="Улица доставки"/>
@@ -84,7 +84,7 @@
                             <HBox spacing="10" styleClass="cart-input-frame">
                                 <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
                                     <image>
-                                        <Image url="@../../../images/checkout-home-icon.png"/>
+                                        <Image url="@../images/checkout-home-icon.png"/>
                                     </image>
                                 </ImageView>
                                 <TextField fx:id="houseField" promptText="12"/>
@@ -95,7 +95,7 @@
                             <HBox spacing="10" styleClass="cart-input-frame">
                                 <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
                                     <image>
-                                        <Image url="@../../../images/checkout-apartment-icon.png"/>
+                                        <Image url="@../images/checkout-apartment-icon.png"/>
                                     </image>
                                 </ImageView>
                                 <TextField fx:id="apartmentField" promptText="34"/>
@@ -108,7 +108,7 @@
                         <HBox spacing="10" styleClass="cart-input-frame">
                             <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-input-image-icon">
                                 <image>
-                                    <Image url="@../../../images/checkout-payment-icon.png"/>
+                                    <Image url="@../images/checkout-payment-icon.png"/>
                                 </image>
                             </ImageView>
                             <ComboBox fx:id="paymentCombo" prefWidth="260" maxWidth="Infinity" HBox.hgrow="ALWAYS">
@@ -146,7 +146,7 @@
                     <graphic>
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true" styleClass="cart-button-image-icon">
                             <image>
-                                <Image url="@../../../images/checkout-submit-icon.png"/>
+                                <Image url="@../images/checkout-submit-icon.png"/>
                             </image>
                         </ImageView>
                     </graphic>

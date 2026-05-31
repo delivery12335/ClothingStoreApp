@@ -2,7 +2,7 @@ package com.clothingstore.clothingstoreapp.dao;
 
 import com.clothingstore.clothingstoreapp.db.DatabaseConnection;
 import com.clothingstore.clothingstoreapp.model.User;
-import com.clothingstore.clothingstoreapp.model.UserRole;
+import com.clothingstore.clothingstoreapp.enums.UserRole;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;

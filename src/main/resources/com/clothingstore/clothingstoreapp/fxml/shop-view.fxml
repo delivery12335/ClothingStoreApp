@@ -19,7 +19,7 @@
                opacity="1.0"
                styleClass="shop-background-image">
         <image>
-            <Image url="@../../../images/Gemini_Generated_Image_lomw4mlomw4mlomw.png"/>
+            <Image url="@../images/Gemini_Generated_Image_lomw4mlomw4mlomw.png"/>
         </image>
     </ImageView>
 
@@ -51,7 +51,7 @@
                         <graphic>
                             <ImageView fitWidth="20" fitHeight="20" preserveRatio="true" smooth="true">
                                 <image>
-                                    <Image url="@../../../images/cart-icon.png"/>
+                                    <Image url="@../images/cart-icon.png"/>
                                 </image>
                             </ImageView>
                         </graphic>
@@ -74,7 +74,7 @@
                     <StackPane styleClass="filter-title-icon">
                         <ImageView fitWidth="18" fitHeight="18" preserveRatio="true" smooth="true">
                             <image>
-                                <Image url="@../../../images/filter-title-icon.png"/>
+                                <Image url="@../images/filter-title-icon.png"/>
                             </image>
                         </ImageView>
                     </StackPane>
@@ -85,7 +85,7 @@
                     <HBox alignment="CENTER_LEFT" spacing="8" styleClass="filter-select-frame">
                         <ImageView fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="filter-select-icon">
                             <image>
-                                <Image url="@../../../images/filter-category-icon.png"/>
+                                <Image url="@../images/filter-category-icon.png"/>
                             </image>
                         </ImageView>
                         <ComboBox fx:id="categoryCombo" maxWidth="Infinity" HBox.hgrow="ALWAYS">
@@ -105,7 +105,7 @@
                     <HBox alignment="CENTER_LEFT" spacing="8" styleClass="filter-select-frame">
                         <ImageView fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="filter-select-icon">
                             <image>
-                                <Image url="@../../../images/filter-brand-icon.png"/>
+                                <Image url="@../images/filter-brand-icon.png"/>
                             </image>
                         </ImageView>
                         <ComboBox fx:id="brandCombo" maxWidth="Infinity" promptText="Все бренды" HBox.hgrow="ALWAYS">
@@ -126,7 +126,7 @@
                     <HBox alignment="CENTER_LEFT" spacing="8" styleClass="filter-select-frame">
                         <ImageView fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="filter-select-icon">
                             <image>
-                                <Image url="@../../../images/filter-color-icon.png"/>
+                                <Image url="@../images/filter-color-icon.png"/>
                             </image>
                         </ImageView>
                         <ComboBox fx:id="colorCombo" maxWidth="Infinity" HBox.hgrow="ALWAYS">
@@ -144,7 +144,7 @@
                     <HBox alignment="CENTER_LEFT" spacing="8" styleClass="filter-select-frame">
                         <ImageView fitWidth="16" fitHeight="16" preserveRatio="true" smooth="true" styleClass="filter-select-icon">
                             <image>
-                                <Image url="@../../../images/filter-size-icon.png"/>
+                                <Image url="@../images/filter-size-icon.png"/>
                             </image>
                         </ImageView>
                         <ComboBox fx:id="sizeCombo" maxWidth="Infinity" HBox.hgrow="ALWAYS">
@@ -216,7 +216,7 @@
                         <graphic>
                             <ImageView fitWidth="17" fitHeight="17" preserveRatio="true" smooth="true" styleClass="shop-filter-button-icon">
                                 <image>
-                                    <Image url="@../../../images/filter-apply-icon.png"/>
+                                    <Image url="@../images/filter-apply-icon.png"/>
                                 </image>
                             </ImageView>
                         </graphic>
@@ -230,7 +230,7 @@
                         <graphic>
                             <ImageView fitWidth="17" fitHeight="17" preserveRatio="true" smooth="true" styleClass="shop-filter-button-icon">
                                 <image>
-                                    <Image url="@../../../images/filter-reset-icon.png"/>
+                                    <Image url="@../images/filter-reset-icon.png"/>
                                 </image>
                             </ImageView>
                         </graphic>
@@ -273,7 +273,7 @@
                     <HBox spacing="12" alignment="CENTER_LEFT" styleClass="shop-benefit" HBox.hgrow="ALWAYS">
                         <ImageView fitWidth="24" fitHeight="24" preserveRatio="true" smooth="true" styleClass="shop-benefit-icon">
                             <image>
-                                <Image url="@../../../images/benefit-delivery-icon.png"/>
+                                <Image url="@../images/benefit-delivery-icon.png"/>
                             </image>
                         </ImageView>
                         <VBox spacing="4">
@@ -284,7 +284,7 @@
                     <HBox spacing="12" alignment="CENTER_LEFT" styleClass="shop-benefit" HBox.hgrow="ALWAYS">
                         <ImageView fitWidth="24" fitHeight="24" preserveRatio="true" smooth="true" styleClass="shop-benefit-icon">
                             <image>
-                                <Image url="@../../../images/benefit-return-icon.png"/>
+                                <Image url="@../images/benefit-return-icon.png"/>
                             </image>
                         </ImageView>
                         <VBox spacing="4">
@@ -295,7 +295,7 @@
                     <HBox spacing="12" alignment="CENTER_LEFT" styleClass="shop-benefit" HBox.hgrow="ALWAYS">
                         <ImageView fitWidth="24" fitHeight="24" preserveRatio="true" smooth="true" styleClass="shop-benefit-icon">
                             <image>
-                                <Image url="@../../../images/benefit-quality-icon.png"/>
+                                <Image url="@../images/benefit-quality-icon.png"/>
                             </image>
                         </ImageView>
                         <VBox spacing="4">
@@ -306,7 +306,7 @@
                     <HBox spacing="12" alignment="CENTER_LEFT" styleClass="shop-benefit" HBox.hgrow="ALWAYS">
                         <ImageView fitWidth="24" fitHeight="24" preserveRatio="true" smooth="true" styleClass="shop-benefit-icon">
                             <image>
-                                <Image url="@../../../images/benefit-support-icon.png"/>
+                                <Image url="@../images/benefit-support-icon.png"/>
                             </image>
                         </ImageView>
                         <VBox spacing="4">

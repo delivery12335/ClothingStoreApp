@@ -1,5 +1,7 @@
 package com.clothingstore.clothingstoreapp.model;
 
+import com.clothingstore.clothingstoreapp.enums.OrderStatus;
+
 public class OrderFilter {
     private Integer userId;
     private String dateFrom;
